@@ -21,7 +21,7 @@ console.log('Server running at http://127.0.0.1:8081/');
 
 
 /* 
-what will happen if we dont set the header 
+what will happen if we don't set the header 
 
 If you don't set the "Content-Type" header in your HTTP response, the behavior depends on the client (e.g., a web browser) that is receiving the response. Setting the "Content-Type" header is a good practice because it helps the client understand how to interpret and display the content correctly.
 */
