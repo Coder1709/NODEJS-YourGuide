@@ -1,36 +1,28 @@
-const mongoose = require('mongoose')
+const mongoose = require("mongoose");
 
-const Schema = mongoose.Schema
+const Schema = mongoose.Schema;
 
-
-const employeeSchema   = new Schema( {
-
-    name : {
-        type : String
+const employeeSchema = new Schema(
+  {
+    name: {
+      type: String,
     },
-    designation : {
-        type : String
+    designation: {
+      type: String,
     },
-    email : {
-        type : String
+    email: {
+      type: String,
     },
     phone: {
-        type : String
+      type: String,
     },
-    age : {
-        type : Number
-    }
+    age: {
+      type: Number,
+    },
+  },
+  { timestamps: true }
+);
 
+const Employee = mongoose.model("Employee", employeeSchema);
 
-
-
-
-
-
-
-} , {timestamps: true})
-
-
-const Employee = mongoose.model('Employee' , employeeSchema)
-
-module.exports = Employee
+module.exports = Employee;

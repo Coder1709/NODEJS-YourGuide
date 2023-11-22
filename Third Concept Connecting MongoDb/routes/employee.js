@@ -14,7 +14,7 @@ router.post( '/store' ,EmployeeController.store)
 
 router.post( '/update' ,EmployeeController.update)
 
-router.post( '/delete' ,EmployeeController.delete)
+router.post( '/delete' ,EmployeeController.destroy)
 
 
 module.exports = router
