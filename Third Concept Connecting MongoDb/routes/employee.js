@@ -1,6 +1,21 @@
-const express = require ( "express")
+const express = require('express');
+const router = express.Router();
 
-const router  = express.Router()
+
+const EmployeeController  = require( '../controllers/EmployeeController')
 
 
-const Empl
+router.get ('/' ,EmployeeController.index)
+
+
+router.post('/show' ,EmployeeController.show)
+
+router.post( '/store' ,EmployeeController.store)
+
+router.post( '/update' ,EmployeeController.update)
+
+router.post( '/delete' ,EmployeeController.delete)
+
+
+module.exports = router
+

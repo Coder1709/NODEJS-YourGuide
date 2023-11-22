@@ -4,8 +4,8 @@ const Employee = require ( '../models/Employee')
 
 //show the list of Employess
 
-const index = ( req , res ,next) => {
-    Employee.find()
+const index =  ( req , res ,next) => {
+     Employee.find()
     .then(response => {
         res.json({
             response
@@ -13,7 +13,7 @@ const index = ( req , res ,next) => {
     })
     .catch( error => {
         res.json({
-            message : "An Error Occured"
+            message : "An Error Occurred"
         })
     })
 
@@ -29,7 +29,7 @@ const show = ( req , res , next) => {
         })
     }).catch (error => {
         res.json({
-            message : "An Error Occured!"
+            message : "An Error Occurred!"
         })
     })
 }
@@ -55,7 +55,7 @@ const store = (req , res , next ) => {
     })
     .catch ( error => {
         res.json ( {
-            message : " An error Occured"
+            message : " An error Occurred"
         })
     })
 
@@ -86,7 +86,7 @@ const update = ( req , res , next) => {
     })
     .catch ( error => {
         res.json ( {
-            message : "An error Ocuured while updating"
+            message : "An error Ocurred while updating"
         })
     })
 
@@ -99,19 +99,19 @@ const update = ( req , res , next) => {
 
 
 const destroy = ( req , res , next) => {
-    let employeeId = req.data.EmployeeId;
+    let employeeId = req.body.EmployeeId;
 
     Employee.findByIdAndRemove(employeeId)
     .then ( () => {
-        req.json ( {
+        res.json ( {
             message : " Employee Successfully deleted"
         })
     })
     .catch ( (error) => {
 
-        req.json ( {
+        res.json ( {
 
-            message : " An error occured while deleting"
+            message : " An error occurred while deleting"
 
         })
 
@@ -121,7 +121,6 @@ const destroy = ( req , res , next) => {
 
 
 module.exports = {
-
     index,show,store,update,destroy
 
 }

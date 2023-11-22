@@ -8,7 +8,10 @@ const morgan = require ( 'morgan')
 const bodyParser = require ( 'body-parser')
 
 
-mongoose.connect('mongodb://localhost:27017/testdb')
+const EmployeeRoute = require('./routes/employee')
+
+
+mongoose.connect('mongodb://localhost:27017/testdb' , {useNewUrlParser :true ,  useUnifiedTopology: true})
 
 const db = mongoose.connection
 
@@ -37,6 +40,8 @@ const PORT = process.env.PORT || 3000;
 app.listen(PORT , ()=> {
 
     console.log(`Server is running on port ${PORT}` );
-    console.log("Arpit Servers is functiona")
+    
 
 });
+
+app.use ( '/api/employee' , EmployeeRoute)
